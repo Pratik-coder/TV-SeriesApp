@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_tv_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleMargin="16dp"
+            app:expandedTitleGravity="top|center_horizontal"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:contentScrim="#FFFFFFFF"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:paddingTop="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintWidth_max="460dp">
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <com.example.tvseriesapp.widget.SquareImageView
+                            android:id="@+id/iv_activity_tv_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp"
+                            android:scaleType="centerCrop"
+                            android:background="@android:color/darker_gray"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="6"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="16dp"
+                            android:visibility="gone"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_activity_tv_details_company_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="8dp"
+                                app:tint="@android:color/white"
+                                app:srcCompat="@drawable/ic_baseline_business_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/company_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@android:color/white"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                tools:text="Company name"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_activity_tv_details_runtime_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="8dp"
+                                app:tint="@android:color/white"
+                                app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/runtime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@android:color/white"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                tools:text="Runtime"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="16dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_activity_tv_details_year_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="8dp"
+                                app:tint="@android:color/white"
+                                app:srcCompat="@drawable/ic_baseline_today_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/year"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@android:color/white"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                tools:text="Year"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="16dp"
+                            android:gravity="center_vertical"
+                            android:visibility="gone"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_activity_tv_details_website_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="8dp"
+                                app:tint="@android:color/white"
+                                app:srcCompat="@drawable/ic_baseline_web_asset_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/website"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@android:color/white"
+                                android:textColorLink="@android:color/white"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                tools:text="Website"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="16dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_numberOfSeasons"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="8dp"
+                                app:tint="@android:color/white"
+                                app:srcCompat="@drawable/ic_baseline_live_tv_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSeasonNumbers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@android:color/white"
+                                android:textColorLink="@android:color/white"
+                                android:maxLines="1"
+                                android:ellipsize="end" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="16dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/iv_numberOfEpisodes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginEnd="8dp"
+                                app:tint="@android:color/white"
+                                app:srcCompat="@drawable/ic_baseline_live_tv_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvEpisodeNumbers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@android:color/white"
+                                android:textColorLink="@android:color/white"
+                                android:maxLines="1"
+                                android:ellipsize="end" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="8dp"
+                app:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:requiresFadingEdge="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/genres_chip_group"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/detail_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="?android:textColorSecondary"/>
+
+                    <View android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp"
+                        android:background="?android:listDivider"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="4dp"
+                                app:srcCompat="@drawable/ic_baseline_star_outline_24"
+                                app:tint="?android:textColorSecondary"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/detail_rating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="4dp"
+                                app:srcCompat="@drawable/ic_baseline_account_circle_24"
+                                app:tint="?android:textColorSecondary"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/detail_votes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginEnd="4dp"
+                                app:srcCompat="@drawable/ic_baseline_attach_money_24"
+                                app:tint="?android:textColorSecondary"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/detail_revenue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.example.tvseriesapp.widget.AutoRecyclerView
+                android:id="@+id/rv_fragment_tvseason_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:columnWidth="160dp"
+                android:padding="6dp"
+                android:visibility="gone"
+                tools:listitem="@layout/row_tvseasonlist"/>
+
+            <TextView
+                android:id="@+id/textViewCast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_cast"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:visibility="gone"/>
+
+           <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tvCredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp" />
+
+            <TextView
+                android:id="@+id/textViewVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_video"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:visibility="gone"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewVideoList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/favorite_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_baseline_star_outline_24"
+        app:layout_anchor="@id/app_bar"
+        app:backgroundTint="@color/white"
+        app:layout_anchorGravity="bottom|end" />
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,46 @@
+<com.example.tvseriesapp.widget.CustomSwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srl_fragment_searchtv_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/et_searchTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="Search your tv shows"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/drawable_editbackground"/>
+
+
+        <com.example.tvseriesapp.widget.AutoRecyclerView
+            android:id="@+id/rv_fragment_searchtv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:columnWidth="160dp"
+            android:layout_margin="10dp"/>
+
+        <ProgressBar
+            android:id="@+id/pb_fragment_searchtv_list"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</com.example.tvseriesapp.widget.CustomSwipeRefreshLayout>

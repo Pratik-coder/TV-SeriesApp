@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_tv_castdetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleMargin="16dp"
+            app:expandedTitleGravity="top|center_horizontal"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:contentScrim="#FFFFFFFF"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:paddingTop="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintWidth_max="460dp">
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <com.example.tvseriesapp.widget.SquareImageView
+                            android:id="@+id/iv_activity_tv_castdetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_gravity="center_horizontal"
+                            android:scaleType="centerCrop"
+                            android:background="@android:color/darker_gray"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                    </FrameLayout>
+
+                 <LinearLayout
+                     android:layout_width="0dp"
+                     android:layout_height="match_parent"
+                     android:orientation="vertical"
+                     android:weightSum="3"
+                     android:layout_weight="1">
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="0dp"
+                         android:layout_weight="1"
+                         android:paddingStart="0dp"
+                         android:paddingEnd="16dp"
+                         android:gravity="center_vertical"
+                         android:orientation="horizontal">
+
+                         <androidx.appcompat.widget.AppCompatImageView
+                             android:id="@+id/imageViewCastPlaceOfBirth"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="0dp"
+                             android:layout_marginEnd="8dp"
+                             app:tint="@android:color/white"
+                             android:visibility="gone"
+                             app:srcCompat="@drawable/ic_baseline_business_24" />
+
+                         <androidx.appcompat.widget.AppCompatTextView
+                             android:id="@+id/textViewPlaceOfBirth"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                             android:textColor="@android:color/white"
+                             android:maxLines="1"
+                             android:ellipsize="end"/>
+
+                     </LinearLayout>
+
+                  <!--   <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="0dp"
+                         android:layout_weight="1"
+                         android:paddingStart="0dp"
+                         android:paddingEnd="16dp"
+                         android:gravity="center_vertical"
+                         android:orientation="horizontal">
+
+                         <androidx.appcompat.widget.AppCompatImageView
+                             android:id="@+id/imageViewAlsoKnowonAs"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="0dp"
+                             android:layout_marginEnd="8dp"
+                             app:tint="@android:color/white"
+                             android:visibility="gone"
+                             app:srcCompat="@drawable/ic_baseline_business_24" />
+
+                         <androidx.appcompat.widget.AppCompatTextView
+                             android:id="@+id/textViewAlsoKnownAs"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:ellipsize="end"
+                             android:maxLines="1"
+                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                             android:textColor="@android:color/white" />
+
+                     </LinearLayout>-->
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="0dp"
+                         android:layout_weight="1"
+                         android:paddingStart="0dp"
+                         android:paddingEnd="16dp"
+                         android:gravity="center_vertical"
+                         android:orientation="horizontal">
+
+                         <androidx.appcompat.widget.AppCompatImageView
+                             android:id="@+id/imageViewCastBirthDate"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="0dp"
+                             android:layout_marginEnd="8dp"
+                             app:tint="@android:color/white"
+                             android:visibility="gone"
+                             app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+                         <androidx.appcompat.widget.AppCompatTextView
+                             android:id="@+id/textViewCastBirthDate"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                             android:textColor="@android:color/white"
+                             android:maxLines="1"
+                             android:ellipsize="end" />
+
+                     </LinearLayout>
+                 </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="8dp"
+                app:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_knownFor"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+
+               <TextView
+                   android:id="@+id/textViewKnownFor"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textSize="25sp"
+                   android:textColor="@color/black"
+                   android:layout_marginTop="10dp"/>
+
+
+
+           </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+
+                        <TextView
+                            android:id="@+id/textViewBiographyTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_biography"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"/>
+
+
+                        <TextView
+                            android:id="@+id/textViewBiography"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="10dp"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_alsoKnownAs"
+                            android:textSize="20sp"
+                            android:visibility="gone"
+                            android:textColor="@color/black"/>
+
+
+                        <TextView
+                            android:id="@+id/textViewAlsoKnownAs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="10dp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+          <!--  <com.example.tvseriesapp.widget.AutoRecyclerView
+                android:id="@+id/rv_fragment_tvseason_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:columnWidth="160dp"
+                android:padding="6dp"
+                android:visibility="gone"
+                tools:listitem="@layout/row_tvseasonlist"/>
+-->
+          <!--  <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tvCredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp" />-->
+
+
+            <TextView
+                android:id="@+id/textViewPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_photos"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPersonImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_margin="10dp"/>
+
+            <TextView
+                android:id="@+id/textViewCredits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_credit"
+                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCredits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

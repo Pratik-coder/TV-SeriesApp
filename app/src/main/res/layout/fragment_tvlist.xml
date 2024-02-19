@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.tvseriesapp.widget.CustomSwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/srl_fragment_iv_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.tvseriesapp.widget.AutoRecyclerView
+            android:id="@+id/rv_fragment_tv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:columnWidth="160dp"
+            android:paddingTop="2dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="64dp"
+            tools:listitem="@layout/row_tv_list" />
+
+        <ProgressBar
+            android:id="@+id/pb_fragment_tv_list"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</com.example.tvseriesapp.widget.CustomSwipeRefreshLayout>

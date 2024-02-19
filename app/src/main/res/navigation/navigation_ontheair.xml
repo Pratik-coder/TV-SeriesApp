@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_ontheair"
+    app:startDestination="@id/nav_ontheair"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/nav_ontheair"
+        android:name="com.example.tvseriesapp.fragments.OnTheAirFragment"
+        android:label="@string/str_ontheair"
+        tools:layout="@layout/row_tv_list">
+
+
+        <action
+            android:id="@+id/navigateToTVDetails"
+            app:destination="@+id/nav_tv_detail"/>
+
+
+    </fragment>
+
+    <activity
+        android:id="@+id/nav_tv_detail"
+        android:name="com.example.tvseriesapp.ui.TVDetailsActivity"
+        tools:layout="@layout/activity_tvdetails">
+
+        <argument
+            android:name="id"
+            app:argType="integer"/>
+
+        <argument
+            android:name="backdrop_path"
+            app:argType="string"/>
+
+
+    </activity>
+
+</navigation>
